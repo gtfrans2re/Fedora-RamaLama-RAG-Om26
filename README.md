@@ -73,10 +73,35 @@ I successfully pulled and tested **four distinct models** across different trans
 | 3 | **Gemma-2**     | `ollama://` | Success |
 | 4 | **Tiny-Vicuna-1B** | `hf://`     | Success |
 
-### Example Command (Step 4 Verification):
+### RamaLama Model Initialization:
+I pulled and ran my first model (TinyLlama) and verified it against the Fedora Foundations prompt:
 ```bash
 ramalama run tinyllama "What are the Four Foundations of the Fedora project?"
 ```
+![TinyLlama](assets/<Screenshot from 2026-03-30 07-55-22.png>)
+
+### Granite-7b-lab Model Initialization:
+I pulled and ran my second model (Granite-7b-lab) and verified it against the Fedora Open Source aura prompt:
+```bash
+ramalama run hf://instructlab/granite-7b-lab-GGUF "How does Fedora feed the aura of Open Source software to the world?"
+```
+![Granite-7b-lab](assets/<Screenshot from 2026-03-30 08-04-00.png>)
+
+### Gemma-2 Model Initialization:
+I pulled and ran my third model (Gemma-2) and verified it against the prompt regarding RamaLama's impact on workflow:
+```bash
+ramalama run gemma2 "Is it true that RamaLama makes working with AI boring?"
+```
+![Gemma-2](assets/<Screenshot from 2026-03-30 08-06-53.png>)
+
+### Tiny-Vicuna-1B Model Initialization:
+I pulled and ran my fourth model (Tiny-Vicuna-1B) and verified it against the Feynman-style Fedora project prompt:
+```bash
+ramalama run hf://afrideva/Tiny-Vicuna-1B-GGUF "Explaining the Fedora project and about the Fedora community to a 5-year-old kid like Feynman would do."
+```
+![Tiny-Vicuna-1B](assets/<Screenshot from 2026-03-30 08-01-11.png>)
+
+---
 
 ## Troubleshooting & Lessons Learned
 
