@@ -108,6 +108,8 @@ ramalama run hf://afrideva/Tiny-Vicuna-1B-GGUF "Explaining the Fedora project an
 ```
 ![Tiny-Vicuna-1B](<assets/Screenshot from 2026-03-30 08-08-40.png>)
 
+While Tiny-Vicuna-1B is exceptionally fast and lightweight, my testing showed that it can occasionally struggle with complex instructions. For example, when asked to explain Fedora in the style of Richard Feynman, the model outputted its internal conversation tags (<|im_start|>) and failed to generate the actual explanation, highlighting the trade-off between model size and instruction-following reliability.
+
 ---
 
 ## Troubleshooting & Lessons Learned
