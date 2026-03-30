@@ -99,6 +99,8 @@ ramalama run gemma2 "Is it true that RamaLama makes working with AI boring?"
 ```
 ![Gemma-2](<assets/Screenshot from 2026-03-30 08-06-53.png>)
 
+Asking a subjective question about RamaLama's "boring" philosophy served as a critical test of the model’s logical boundaries and ethical alignment. By posing a prompt that invited a personal opinion, I pushed the model to reveal its safety guardrails; rather than agreeing with the premise or hallucinating a persona, the model maintained strict objective neutrality. This interaction proved that the integration is robust enough to recognize its role as a neutral tool, successfully demonstrating that it can handle complex, nuanced human interaction without crossing into the "border" of subjective debate, a vital quality for any AI tool being considered for the Fedora community.
+
 ### Tiny-Vicuna-1B Model Initialization:
 I pulled and ran my fourth model (Tiny-Vicuna-1B) and verified it against the Feynman-style Fedora project prompt:
 ```bash
