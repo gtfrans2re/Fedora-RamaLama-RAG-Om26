@@ -99,7 +99,7 @@ I pulled and ran my fourth model (Tiny-Vicuna-1B) and verified it against the Fe
 ```bash
 ramalama run hf://afrideva/Tiny-Vicuna-1B-GGUF "Explaining the Fedora project and about the Fedora community to a 5-year-old kid like Feynman would do."
 ```
-![Tiny-Vicuna-1B](<assets/Screenshot from 2026-03-30 08-01-11.png>)
+![Tiny-Vicuna-1B](<assets/Screenshot from 2026-03-30 08-08-40.png>)
 
 ---
 
