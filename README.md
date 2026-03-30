@@ -142,9 +142,62 @@ Part of the experience involved navigating the constraints of a VM and registry 
 
 ---
 
+## Model Weight & Infrastructure Discussion
+
+A key part of this task was evaluating how different model sizes and transports impact the stability of a Fedora-powered virtual environment.
+
+---
+
+### 1. Lightweight vs. Heavyweight Models
+
+During testing, I observed a significant difference between **"Tiny" models** and full-scale **Instruct models**:
+
+- **Lightweight Tier** *(e.g., TinyLlama, Tiny-Vicuna)*  
+  These models *(~450MB – 600MB)* are the **gold standard** for isolated VM development.  
+  - Pull in under **60 seconds**  
+  - Run inference **almost instantly** on 4 CPUs  
+  - No timeout issues  
+
+- **Mid-Range Tier** *(e.g., Granite-7B, DeepSeek-8B)*  
+  At **3.8GB – 4.5GB**, these models represent the **upper threshold** of the current infrastructure.  
+  - More accurate responses (especially for Fedora-related queries)  
+  - Push limits of **8GB RAM**  
+  - Occasional **container health check timeouts**  
+
+- **Heavyweight Tier** *(e.g., GPT-OSS 20B)*  
+  At **10.8GB+**, these models are **not suitable** for the current VM setup.  
+  - CPU-only runtime cannot handle 20B parameters efficiently  
+  - Leads to **consistent container timeouts**  
+
+---
+
+### 2. Transport & Registry Reliability
+
+The **"diverse"** aspect of this study also included registry performance:
+
+- **Ollama (`ollama://`)**  
+  - Most consistent download speeds  
+  - ~**10 MB/s average**  
+
+- **Hugging Face (`hf://`)**  
+  - Largest variety of **GGUF-quantized models**  
+  - Encountered **disk space issues** when pulling multiple large models  
+
+---
+
+### 3. The "Disk Space" Bottleneck
+
+The most critical error that may come up:
+
+```bash
+I/O Error: [Errno 28] No space left on device
+```
+
+---
+
 ## Final Status
 
-The Fedora environment is now fully configured with RamaLama. I have successfully demonstrated the ability to:
+Now that the Fedora environment is fully configured with RamaLama. I have successfully demonstrated the ability to:
 
 - Deploy a Fedora VM via Multipass  
 - Manage a Python 3.14 virtual environment  
