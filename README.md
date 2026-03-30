@@ -44,6 +44,11 @@ sudo dnf install ramalama -y
 ramalama version
 # Output: ramalama version 0.17.1
 ```
+To begin the AI implementation phase, RamaLama was installed directly onto the Fedora 43 system to leverage native package management:
+![RamaLama](<assets/Screenshot from 2026-03-30 08-14-50.png>)
+
+I verified the specific version of RamaLama installed on the system to ensure compatibility with the upcoming RAG tasks:
+![RamaLama Version](<assets/Screenshot from 2026-03-30 08-18-12.png>)
 
 ---
 
