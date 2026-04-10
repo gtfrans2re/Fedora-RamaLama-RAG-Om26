@@ -1,8 +1,8 @@
 # Fedora issue #124: assignment submission document for the issue on learning how RamaLama makes working with AI boring.
 
-As an Outreachy contributor for the **Fedora Project**, this task focused on setting up **RamaLama**, an open-source tool designed to make local AI development simple and "boring." 
+As an Outreachy contributor for the **Fedora Project**, I’ve spent this task exploring **RamaLama**, a tool with a mission I love: making local AI development so simple it actually becomes "boring." 
 
-The task was to install RamaLama on a Fedora environment, manage AI models across multiple transports (Ollama, HuggingFace, OCI), and verify model performance with Fedora-specific prompts. This serves as the foundation for building a **Retrieval-Augmented Generation (RAG)** system based on Fedora RPM Packaging Guidelines.
+My goal was to transform a fresh Fedora environment into a local AI powerhouse, testing models across multiple transports (Ollama, HuggingFace, OCI) to lay the groundwork for a **Retrieval-Augmented Generation (RAG)** system centered on the Fedora RPM Packaging Guidelines.
 
 ---
 
@@ -26,9 +26,9 @@ The task was to install RamaLama on a Fedora environment, manage AI models acros
 
 ---
 
-## Environment Setup
+## Setting the Stage: Environment Setup
 
-To maintain a clean and reproducible environment, I utilized a Fedora-powered Virtual Machine isolated from my local system.
+To keep things clean and "reproducible" (the gold standard for any sysadmin!), I fired up a Fedora-powered Virtual Machine. This ensured that my experiments stayed isolated from my local system while giving me a "blank canvas" to work on.
 
 ### 1. Multipass VM Initialization
 I used the `multipass` CLI to relaunch my previously installed Fedora 43 Cloud instance. 
@@ -85,9 +85,18 @@ git push origin main
 ```
 
 ---
-## Model Management & Performance Testing
 
-I successfully pulled and tested **four distinct models** across different transports.
+## Putting Models to the Test
+
+I successfully "recruited" **four distinct models** into my environment. Each one brought something different to the table, from lightning-fast "tiny" models to more substantial 7B parameter engines.
+
+### Gemma-2: The Ethics Test
+I decided to have a little fun with **Gemma-2** by asking it a meta-question: *"Is it true that RamaLama makes working with AI boring?"*
+
+The result was fascinating. Rather than a simple 'yes' or 'no,' the model maintained a refreshing level of **objective neutrality**. It showed me that RamaLama isn't just a technical bridge—it's a tool with built-in guardrails that respect the boundaries of subjective debate. This was a "lightbulb moment" for me regarding how safe these tools are for the Fedora community.
+
+### Tiny-Vicuna-1B: The Feynman Experiment
+I asked Tiny-Vicuna to explain Fedora to a 5-year-old using the "Feynman Method." While the model was incredibly fast, it hit a bit of a "hiccup"—outputting internal conversation tags (`<|im_start|>`) instead of the actual explanation. This was a great lesson for me: in the world of AI, there's always a trade-off between a model's "weight" and its ability to follow complex personas!
 
 ### Successful Models
 
@@ -134,7 +143,10 @@ While Tiny-Vicuna-1B is exceptionally fast and lightweight, my testing showed th
 
 ## Troubleshooting & Lessons Learned
 
-Part of the experience involved navigating the constraints of a VM and registry permissions.
+No technical journey is complete without a few roadblocks! Here’s how I navigated the quirks of VM constraints and registry permissions:
+
+* **The Disk Space Wall:** I quickly learned that AI models have a healthy appetite for storage! Pulling several large models led to the dreaded `No space left on device` error. My fix? Prioritizing efficiency by sticking to high-performing "tiny" models that fit within my 50GB limit.
+* **Registry Hurdles:** When `quay.io` gave me an authorization error, I didn't get stuck. I simply pivoted to the `ollama://` transport, proving that RamaLama’s flexibility is one of its greatest strengths.
 
 1. **Registry Authorization Issues (OCI/Quay.io)**
 
