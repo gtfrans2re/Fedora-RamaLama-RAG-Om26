@@ -139,6 +139,7 @@ Part of the experience involved navigating the constraints of a VM and registry 
 1. **Registry Authorization Issues (OCI/Quay.io)**
 
    **Error:** `unauthorized: access to the requested resource is not authorized.`
+   ![ICO_QUAY Failure](<assets/oci_quay_auth_failure_issue.png>)
 
    - **Reason:** Directly pulling from `quay.io/ramalama/gemma-2-9b` failed due to permission constraints on that specific registry path.
    - **Solution:** I pivoted to the verified `ollama://` transport for Gemma-2, which pulled successfully.
@@ -146,6 +147,7 @@ Part of the experience involved navigating the constraints of a VM and registry 
 2. **Registry 404 & Transport Stability (ModelScope)**
 
    **Error:** `HTTP Error 404: Not Found.`
+   ![HTTP Error 404: Not Found](<assets/HTTP Error 404 Not Found.png>)
 
    - **Reason:** The `ms://` (ModelScope) transport encountered path resolution issues for the Phi-3 model.
    - **Solution:** To maintain progress, I focused on HuggingFace and Ollama transports, which offered higher stability for the GGUF models in this environment.
@@ -153,6 +155,7 @@ Part of the experience involved navigating the constraints of a VM and registry 
 3. **Resource Constraints (Disk Space)**
 
    **Error:** `OSError: [Errno 28] No space left on device.`
+   ![No space left on device](<assets/No space left on device.png>)
 
    - **Reason:** Attempting to pull multiple large models (like DeepSeek-R1) exceeded the VM's 50GB disk allocation.
    - **Solution:** I focused on Tiny-Vicuna-1B for the final verification, which allowed for a successful "end-to-end" test within the remaining storage limits.
@@ -160,6 +163,7 @@ Part of the experience involved navigating the constraints of a VM and registry 
 4. **GPU/Container Health Checks**
 
    **Error:** `health check of container ... timed out after 20 seconds.`
+   ![timed out after 20 seconds](<assets/timed out after 20 seconds.png>)
 
    - **Reason:** Occurred when trying to run very large models (20B parameters) on a CPU-only VM environment.
    - **Solution:** I chose models sized between 1B and 7B parameters to ensure smooth performance on the available 4 CPUs and 8GB of RAM.
