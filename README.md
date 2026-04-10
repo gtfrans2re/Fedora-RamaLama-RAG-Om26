@@ -6,6 +6,26 @@ The task was to install RamaLama on a Fedora environment, manage AI models acros
 
 ---
 
+## Table of Contents
+
+1. [**Environment Setup**](#environment-setup)
+    * [Multipass VM Initialization](#1-multipass-vm-initialization)
+    * [RamaLama Installation & Verification](#3-ramalama-installation)
+2. [**Knowledge Base Preparation**](#knowledge-base-preparation)
+3. [**Model Management & Performance Testing**](#model-management--performance-testing)
+    * [Successful Model Inventory](#successful-models)
+    * [Model Initialization (TinyLlama, Granite, Gemma-2, Tiny-Vicuna)](#ramalama-model-initialization)
+4. [**Troubleshooting & Lessons Learned**](#troubleshooting--lessons-learned)
+    * [Registry & Transport Errors](#1-registry-authorization-issues-oci-quay-io)
+    * [Resource Constraints (Disk & RAM)](#3-resource-constraints-disk-space)
+5. [**Infrastructure Discussion: The "Boring" AI Philosophy**](#model-weight--infrastructure-discussion)
+    * [Lightweight vs. Heavyweight Model Analysis](#1-lightweight-vs-heavyweight-models)
+    * [Transport & Registry Reliability](#2-transport--registry-reliability)
+    * [The "Disk Space" Bottleneck](#3-the-disk-space-bottleneck)
+6. [**Final Status & Next Steps**](#final-status)
+
+---
+
 ## Environment Setup
 
 To maintain a clean and reproducible environment, I utilized a Fedora-powered Virtual Machine isolated from my local system.
