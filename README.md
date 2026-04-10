@@ -65,10 +65,10 @@ ramalama version
 # Output: ramalama version 0.17.1
 ```
 To begin the AI implementation phase, RamaLama was installed directly onto the Fedora 43 system to leverage native package management:
-![RamaLama](<assets/Screenshot from 2026-03-30 08-14-50.png>)
+![RamaLama](<assets/ramalama_installation.png>)
 
 I verified the specific version of RamaLama installed on the system to ensure compatibility with the upcoming RAG tasks:
-![RamaLama Version](<assets/Screenshot from 2026-03-30 08-18-12.png>)
+![RamaLama Version](<assets/ramalama_version.png>)
 
 ---
 
@@ -103,21 +103,21 @@ I pulled and ran my first model (TinyLlama) and verified it against the Fedora F
 ```bash
 ramalama run tinyllama "What are the Four Foundations of the Fedora project?"
 ```
-![TinyLlama](<assets/Screenshot from 2026-03-30 07-55-22.png>)
+![TinyLlama](<assets/tinyllama_install_run_prompt.png>)
 
 ### Granite-7b-lab Model Initialization:
 I pulled and ran my second model (Granite-7b-lab) and verified it against the Fedora Open Source aura prompt:
 ```bash
 ramalama run hf://instructlab/granite-7b-lab-GGUF "How does Fedora feed the aura of Open Source software to the world?"
 ```
-![Granite-7b-lab](<assets/Screenshot from 2026-03-30 08-04-00.png>)
+![Granite-7b-lab](<assets/hugging_face_granite_7b.png>)
 
 ### Gemma-2 Model Initialization:
 I pulled and ran my third model (Gemma-2) and verified it against the prompt regarding RamaLama's impact on workflow:
 ```bash
 ramalama run gemma2 "Is it true that RamaLama makes working with AI boring?"
 ```
-![Gemma-2](<assets/Screenshot from 2026-03-30 08-06-53.png>)
+![Gemma-2](<assets/gemma2_install_run_prompt.png>)
 
 Asking a subjective question about RamaLama's "boring" philosophy served as a critical test of the model’s logical boundaries and ethical alignment. By posing a prompt that invited a personal opinion, I pushed the model to reveal its safety guardrails; rather than agreeing with the premise or hallucinating a persona, the model maintained strict objective neutrality. This interaction proved that the integration is robust enough to recognize its role as a neutral tool, successfully demonstrating that it can handle complex, nuanced human interaction without crossing into the "border" of subjective debate, a vital quality for any AI tool being considered for the Fedora community.
 
@@ -126,7 +126,7 @@ I pulled and ran my fourth model (Tiny-Vicuna-1B) and verified it against the Fe
 ```bash
 ramalama run hf://afrideva/Tiny-Vicuna-1B-GGUF "Explaining the Fedora project and about the Fedora community to a 5-year-old kid like Feynman would do."
 ```
-![Tiny-Vicuna-1B](<assets/Screenshot from 2026-03-30 08-08-40.png>)
+![Tiny-Vicuna-1B](<assets/hugging_face_tiny_vicuna_1b.png>)
 
 While Tiny-Vicuna-1B is exceptionally fast and lightweight, my testing showed that it can occasionally struggle with complex instructions. For example, when asked to explain Fedora in the style of Richard Feynman, the model outputted its internal conversation tags (<|im_start|>) and failed to generate the actual explanation, highlighting the trade-off between model size and instruction-following reliability.
 
