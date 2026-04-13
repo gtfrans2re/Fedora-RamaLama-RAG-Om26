@@ -5,6 +5,23 @@ As an Outreachy contributor for the **Fedora Project**, I’ve spent this task e
 My goal was to transform a fresh Fedora environment into a local AI powerhouse, testing models across multiple transports (Ollama, HuggingFace, OCI) to lay the groundwork for a **Retrieval-Augmented Generation (RAG)** system centered on the Fedora RPM Packaging Guidelines.
 
 ---
+## Repository Structure
+```
+.
+├── assets/
+│   ├── gemma2_install_run_prompt.png
+│   ├── hugging_face_granite_7b.png
+│   ├── hugging_face_tiny_vicuna_1b.png
+│   ├── ramalama_installation.png
+│   ├── ramalama_version.png
+│   └── tinyllama_install_run_prompt.png
+├── data/
+│   └── fedora-versioning.pdf         # Curated packaging guidelines
+├── ramalama_env/                     # Python virtual environment (ignored)
+├── README.md                         # Task analysis and "Boring AI" philosophy
+└── .gitignore                        # Standard exclusions for model weights/venvs
+```
+---
 
 ## Table of Contents
 
@@ -245,3 +262,20 @@ Now that the Fedora environment is fully configured with RamaLama. I have succes
 - Troubleshoot real-world infrastructure errors (Disk I/O, Registry 404s, and Permissions)
 
 **Next Step:** Moving toward indexing the `data/` guidelines into a local vector store using `ramalama rag`.
+
+---
+
+### References
+
+*   **RamaLama Documentation**: [https://github.com/containers/ramalama/tree/main/docs](https://github.com/containers/ramalama/tree/main/docs)
+*   **Fedora RPM Packaging Guidelines**: [https://fedorapeople.org/~tmz/guidelines/packaging-guidelines/Versioning/Versioning.pdf](https://fedorapeople.org/~tmz/guidelines/packaging-guidelines/Versioning/Versioning.pdf)
+*   **Ollama Model Library**: [https://ollama.com/library](https://ollama.com/library)
+*   **HuggingFace (GGUF Models)**: [https://huggingface.co/models?library=gguf](https://huggingface.co/models?library=gguf)
+*   **Multipass Documentation**: [https://documentation.ubuntu.com/multipass/stable/](https://documentation.ubuntu.com/multipass/stable/)
+*   **Fedora 43 Cloud Images**: [https://www.fedoraproject.org/cloud/download/](https://www.fedoraproject.org/cloud/download/)
+*   **Python Virtual Environments**: [https://docs.python.org/3/library/venv.html](https://docs.python.org/3/library/venv.html)
+
+---
+
+### Acknowledgement
+**Google Gemini** served as a technical co-pilot, assisting in structuring the README documentation and troubleshooting environment-specific errors encountered in this task execution.
