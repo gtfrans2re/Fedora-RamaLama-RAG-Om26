@@ -85,6 +85,7 @@ To begin the AI implementation phase, RamaLama was installed directly onto the F
 ![RamaLama](<assets/ramalama_installation.png>)
 
 I verified the specific version of RamaLama installed on the system to ensure compatibility with the upcoming RAG tasks:
+
 ![RamaLama Version](<assets/ramalama_version.png>)
 
 ---
